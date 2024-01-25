@@ -28,10 +28,19 @@ class cardActions {
     cy.get('.js-confirm[value="Delete"]').click();
     return this;
   }
-  clickOnMakeTemplateButton() {
-    cy.get(".js-convert-to-template").click();
+  clickOnCreateFromTemplateIcon() {
+    cy.get('[data-testid="list"]')
+      .first()
+      .find('[data-testid="card-template-list-button"]')
+      .click();
     return this;
   }
+  clickOnCreateNewTemplateCardButton() {
+    //cy.get(".js-convert-to-template").click();
+    cy.get('[data-testid="create-new-template-card-button"]').click();
+    return this;
+  }
+
   closeCardDetailsWindow() {
     cy.get(".js-close-window").click({ force: true });
     return this;
@@ -45,6 +54,13 @@ class cardActions {
     cy.get(".js-card-detail-title-input.is-editing").clear({ force: true });
     cy.wait(2000);
     cy.get(".js-card-detail-title-input.is-editing").type(`${title}` + "{enter}");
+    return this;
+  }
+
+  enterTemplateCardTitle(title) {
+    cy.get('[data-testid="create-template-card-composer"]').clear();
+    cy.wait(1000);
+    cy.get('[data-testid="create-template-card-composer"]').type(title + "{enter}");
     return this;
   }
 

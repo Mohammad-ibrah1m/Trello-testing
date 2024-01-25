@@ -16,6 +16,12 @@ class cardAssertions {
     return this;
   }
 
+  checkIfTemplateBannerIsVisibleInCardDetailsWindow() {
+    cy.get('[data-testid="template-card-back-banner"]')
+      .should("be.visible")
+      .and("contain", "This is a Template card.");
+  }
+
   checkIfCardWasMoved(cardTitle, listName) {
     cy.contains('[data-testid="list"]', listName).children().contains(cardTitle);
     return this;

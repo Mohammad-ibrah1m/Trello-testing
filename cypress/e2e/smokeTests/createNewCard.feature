@@ -1,3 +1,4 @@
+@smoke
 Feature: Create a new card functionality
 
     Feature Description

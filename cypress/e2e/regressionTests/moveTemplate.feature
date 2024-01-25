@@ -1,3 +1,4 @@
+@R_5 @regression
 Feature: Verify move template functionality
 
     Scenario: Check if the user can move template to another list successfully

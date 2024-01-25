@@ -1,3 +1,4 @@
+@R_4 @regression
 Feature: Verify template name update functionality
 
     Scenario: Check if the user can update template name successfully

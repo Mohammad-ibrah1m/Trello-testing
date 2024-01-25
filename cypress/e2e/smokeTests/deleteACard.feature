@@ -1,3 +1,4 @@
+@R_2 @smoke
 Feature: Checking delete a card functionality
 
     Scenario: Verify that user can delete a card

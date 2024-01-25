@@ -1,3 +1,4 @@
+@R_1 @smoke
 Feature: Check list functionality
     Scenario: Verify that user can create a new list
         Given user navigated to board page

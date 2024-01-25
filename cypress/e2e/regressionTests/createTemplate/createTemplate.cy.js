@@ -29,9 +29,9 @@ before(() => {
     sharedDataUtil.createList(data.body.id, listName).as("listResponse");
   });
 
-  cy.get("@listResponse").then((data) => {
+  /* cy.get("@listResponse").then((data) => {
     sharedDataUtil.createCard(data.body.id, cardTitle).as("cardResponse");
-  });
+  }); */
 });
 
 // Given user navigated to board page
@@ -41,28 +41,35 @@ Given("user navigated to board page", () => {
     sharedAction.openBoard(data.body.url);
   });
 
-  // When user clicked on the card he wants to use as a template card
+  // When user clicked on create from template icon
 
-  When("user clicked on the card he wants to use as a template card", () => {
-    cardAction.clickOnCard(cardTitle);
+  When("user clicked on create from template icon", () => {
+    cardAction.clickOnCreateFromTemplateIcon();
   });
 
-  // And user clicked on Make Template button
+  // And user clicked on create new template button
 
-  When("user clicked on Make Template button", () => {
-    cardAction.clickOnMakeTemplateButton();
+  When("user clicked on create new template button", () => {
+    cy.wait(1000);
+    cardAction.clickOnCreateNewTemplateCardButton();
   });
 
-  // And user closed card details window
+  // And user entered template title
 
-  When("user closed card details window", () => {
-    cardAction.closeCardDetailsWindow();
+  When("user entered template title", () => {
+    cardAction.enterTemplateCardTitle(cardTitle);
   });
 
   // Then template badge is visible on the card in the list
 
   Then("template badge is visible on the card in the list", () => {
     cardAssertion.checkIfTemplateBadgeExists();
+  });
+
+  // template banner exists on the template card details window
+
+  Then("template banner is visible on the template card details window", () => {
+    cardAssertion.checkIfTemplateBannerIsVisibleInCardDetailsWindow();
   });
 });
 

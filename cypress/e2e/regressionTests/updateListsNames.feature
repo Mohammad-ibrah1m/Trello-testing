@@ -1,3 +1,4 @@
+@R_1 @regression
 Feature: Verify that user can update list name
 
     check list name update functionality
@@ -7,7 +8,7 @@ Feature: Verify that user can update list name
         And user typed the updated list name
         Then list name should be updated
 # Examples:
-#     | listIndex | listName |
-#     | 0         | one      |
-#     | 1         | two      |
-#     | 2         | three    |
+#     | listName |
+#     | one      |
+#     | two      |
+#     | three    |

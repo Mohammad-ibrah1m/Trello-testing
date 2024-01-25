@@ -1,3 +1,5 @@
+@R_6 @regression
+
 Feature: Verify hide template functionality
 
     Scenario: Check if the user can hide template successfully
